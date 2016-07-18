@@ -2,7 +2,9 @@ BASE_URL = 'http://localhost:3000/'
 
 var renderCompanies = function(){
   $('#companies').html('');
+
   $.get(BASE_URL + 'api/v1/companies', function(data){
+
     $(data).each(function(i){
       var template = $('#company').html();
       Mustache.parse(template);
@@ -13,11 +15,11 @@ var renderCompanies = function(){
     $('.company-details').hide().each(function(i){
       $(this).delay(i*50).fadeIn(500);
     })
+
   })
 }
 
 $(document).ready(function(){
-
   renderCompanies();
 
   $('#companies').on('click', ".like", function(data){

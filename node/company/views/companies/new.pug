@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 New Company
+  form(method="POST" action="/companies")
+    label(for='name') Name
+    input(name='name' type='text')
+
+    label(for='products') Products
+    textarea(name='products' type='text')
+
+    input(type="submit" value="Create Company")
