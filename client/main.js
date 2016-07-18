@@ -19,10 +19,10 @@ var renderCompanies = function(){
 $(document).ready(function(){
 
   renderCompanies();
-  
+
   $('#companies').on('click', ".like", function(data){
     var companyId = $(this).parent().data('id');
-    console.log("Company liked: " + $(this).parent().data('id'));
+    
     $.ajax({
       method: "POST",
       url: BASE_URL + 'likes/?company_id=' + companyId,
