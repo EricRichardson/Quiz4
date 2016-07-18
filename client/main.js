@@ -19,17 +19,18 @@ var renderCompanies = function(){
 $(document).ready(function(){
 
   renderCompanies();
+  
   $('#companies').on('click', ".like", function(data){
+    var companyId = $(this).parent().data('id');
     console.log("Company liked: " + $(this).parent().data('id'));
     $.ajax({
       method: "POST",
-      url: BASE_URL + 'likes/?company_id=' + $(this).parent().data('id'),
+      url: BASE_URL + 'likes/?company_id=' + companyId,
       error: function(){
         alert("Error in liking questions");
       },
       success: function(data){
-        console.log("Company liked");
-        renderCompanies();
+       $('#like-count-'+ companyId).html(function(i, val) { return +val+1 });
       }
     })
 
