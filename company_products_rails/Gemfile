@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'quiet_assets'
 gem 'rack-cors', require: 'rack/cors'
 gem 'hirb'
 gem 'active_model_serializers'
