@@ -1,7 +1,9 @@
 class CompaniesController < ApplicationController
 
   def index
-    @companies = Company.all
-    render json: @companies
+    respond_to do |format|
+      format.html { render @companies }
+      format.json {render json: @companies}
+    end
   end
 end

@@ -2,7 +2,7 @@ BASE_URL = 'http://localhost:3000/'
 
 var renderCompanies = function(){
   $('#companies').html('');
-  $.get(BASE_URL + 'companies', function(data){
+  $.get(BASE_URL + 'api/v1/companies', function(data){
     $(data).each(function(i){
       var template = $('#company').html();
       Mustache.parse(template);
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
   $('#companies').on('click', ".like", function(data){
     var companyId = $(this).parent().data('id');
-    
+
     $.ajax({
       method: "POST",
       url: BASE_URL + 'likes/?company_id=' + companyId,
