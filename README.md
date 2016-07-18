@@ -14,8 +14,11 @@ $('a').click(function(event){
 # Instructions
 
 git clone git@github.com:EricRichardson/Quiz4.git
+
 cd quiz4/company_products_rails
+
 rake db:create db:migrate db:seed
+
 rails s
 
 *In a different tab navigate to the client folder*
